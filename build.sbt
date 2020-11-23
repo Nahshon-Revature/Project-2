@@ -6,6 +6,17 @@ scalaVersion := "2.12.10"
 
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "3.0.1"
 
+
+//circe dependencies for json parsing + manipulation
+val circeVersion = "0.12.3"
+
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
+
+
 // for streaming runner
 
 libraryDependencies += "org.apache.spark" %% "spark-streaming" % "3.0.1"
